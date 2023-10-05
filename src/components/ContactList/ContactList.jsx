@@ -1,6 +1,6 @@
 import { Btn, Item } from './ContactList.styled';
 
-export const ContactList = ({ options, deleteContact }) => {
+export function ContactList({ options, deleteContact }) {
   // console.log(options);
   return options.map(option => (
     <Item key={option.id}>
@@ -10,4 +10,4 @@ export const ContactList = ({ options, deleteContact }) => {
       </Btn>
     </Item>
   ));
-};
+}
