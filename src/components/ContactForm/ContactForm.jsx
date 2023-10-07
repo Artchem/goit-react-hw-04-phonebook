@@ -1,4 +1,10 @@
 import { useState } from 'react';
+import {
+  ButtonStyled,
+  FormStyled,
+  InputStyled,
+  LabelStyled,
+} from './ContactForm.styled';
 
 export default function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
@@ -34,10 +40,10 @@ export default function ContactForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="">
+    <FormStyled onSubmit={handleSubmit}>
+      <LabelStyled htmlFor="">
         Name
-        <input
+        <InputStyled
           type="text"
           name="name"
           value={name}
@@ -46,10 +52,10 @@ export default function ContactForm({ onSubmit }) {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-      </label>
-      <label htmlFor="">
+      </LabelStyled>
+      <LabelStyled htmlFor="">
         Number
-        <input
+        <InputStyled
           type="tel"
           name="number"
           value={number}
@@ -58,9 +64,9 @@ export default function ContactForm({ onSubmit }) {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-      </label>
-      <button type="submit">Add contact</button>
-    </form>
+      </LabelStyled>
+      <ButtonStyled type="submit">Add contact</ButtonStyled>
+    </FormStyled>
   );
 }
 
